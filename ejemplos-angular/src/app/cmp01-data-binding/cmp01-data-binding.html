@@ -2,4 +2,19 @@
 
 <h3>String Interpolation</h3>
 <p>Me llamo {{nombre}} {{apellido}}</p>
-<p>Me llamo {{getNombreCompleto()}}</p>
+<!-- <p>Me llamo {{getNombreCompleto()}}</p> -->
+
+<h3>Property Binding</h3>
+<input type="text" [value]="nombre">
+<img [src]="logoAngular" width="100" alt="Logo de {{nombreFramework}}">
+<!-- <img src="{{logoAngular}}" width="100" alt="Logo de {{nombreFramework}}"> -->
+
+<h3>Event Binding</h3>
+<button type="button" (click)="mostrarMensaje('Hola')">Saludar</button>
+<button type="button" (click)="mostrarMensaje('Adios')">Despedida</button>
+
+<input type="text" [value]="apellido" (input)="cambiarApellido($event)">
+
+<h3>Two Way Binding</h3>
+<input type="text" [(ngModel)]="apellido">
+<!-- bananas in a box [()] -->

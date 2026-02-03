@@ -1,0 +1,20 @@
+<h2>Tema 02: Pipes</h2>
+
+<div>
+  <h3>{{producto.titulo}}</h3>
+  <p>{{producto.descripcion}}</p>
+  <p>Precio: {{producto.precio}}</p>
+  <p>Fecha lanzamiento: {{producto.fechaLanzamiento}}</p>
+</div>
+
+<div>
+  <h3>{{producto.titulo | titlecase}}</h3>
+  <p>{{producto.descripcion | slice:0:200}}...</p>
+  <p>Precio: {{producto.precio | currency:'EUR'}}</p>
+  <p>Fecha lanzamiento: {{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>
+</div>
+
+<code>
+  <pre>{{producto}}</pre>
+  <pre>{{producto | json}}</pre>
+</code>
