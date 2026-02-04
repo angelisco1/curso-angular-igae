@@ -1,0 +1,9 @@
+<h2>Tema 04: Input y Output</h2>
+
+<!-- <app-sugus></app-sugus>
+<app-sugus sabor="fresa" color="red"></app-sugus>
+<app-sugus [sabor]="sugus[0].sabor" [color]="sugus[0].color"></app-sugus> -->
+
+<app-card-sugus [sugus]="{sabor: 'piña', color: 'blue'}" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+
+<app-card-sugus [sugus]="sugus[0]" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>

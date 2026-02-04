@@ -8,7 +8,7 @@
 </div>
 
 <div>
-  <h3>{{producto.titulo | titlecase}}</h3>
+  <h3>{{producto.titulo | uppercase | titlecase}}</h3>
   <p>{{producto.descripcion | slice:0:200}}...</p>
   <p>Precio: {{producto.precio | currency:'EUR'}}</p>
   <p>Fecha lanzamiento: {{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>

@@ -1,0 +1,9 @@
+<div>
+  <app-sugus [sabor]="sugus()!.sabor" [color]="sugus()!.color"></app-sugus>
+
+  <label>Cantidad:
+    <input type="number" [(ngModel)]="cantidad">
+  </label>
+
+  <button type="button" (click)="addSugus()">Añadir</button>
+</div>

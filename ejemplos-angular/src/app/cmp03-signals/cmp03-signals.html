@@ -8,8 +8,26 @@
 
   <!-- Ejercicio -->
   <!-- Tiene que poner la cuenta a 0 -->
-  <button type="button">Resetear cuenta</button>
+  <button type="button" (click)="resetearCuenta()">Resetear cuenta</button>
 
   <!-- Tiene que cambiar la cuenta al valor introducido en el input -->
-  <input type="number">
+  <input type="number" [value]="cuenta()" (change)="cambiarCuenta($event)">
+</div>
+
+<h3>Computed Signals</h3>
+<div>
+  <label>
+    Precio sin IVA:
+    <input type="number" [value]="precioSinIva()" (change)="cambiarPrecio($event)">
+  </label>
+
+  <label>
+    Descuento:
+    <input type="number" [(ngModel)]="descuento">
+  </label>
+
+  <p>Precio: {{precioSinIva() | currency}}</p>
+  <p>Precio con IVA: {{precioConIva() | currency}}</p>
+  <p>Descuento: {{descuento()}}</p>
+  <p>Precio total: {{precioTotal() | currency}}</p>
 </div>
