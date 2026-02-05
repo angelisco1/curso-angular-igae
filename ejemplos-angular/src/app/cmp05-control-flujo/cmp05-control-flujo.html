@@ -1,1 +1,76 @@
-<p>cmp05-control-flujo works!</p>
+<h2>Tema 05: nueva sintaxis de control de flujo</h2>
+
+<h3>if/else if/else</h3>
+<!-- *ngIf, then  -->
+<!-- <button *ngIf="isAuthenticated(); then button2"></button>
+<ng-template #button2>
+  <button></button>
+</ng-template> -->
+
+@if (isAuthenticated()) {
+  <button type="button" (click)="logout()">Logout</button>
+} @else {
+  <button type="button" (click)="login()">Login</button>
+}
+
+
+<h3>for</h3>
+<!-- *ngFor -->
+ <!-- <tr *ngFor="let usuario of usuarios; track $index" [class]="{esPrimera: $first, esUltima: $last, esPar: $even}"></tr> -->
+
+<button type="button" (click)="vaciarLista()">Vaciar lista</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Departamento</th>
+      <th>Activo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (usuario of usuarios(); track usuario.id) {
+      <tr [class]="{esPrimera: $first, esUltima: $last, esPar: $even}">
+        <td>{{$index + 1}}/{{$count}}</td>
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.departamento}}</td>
+        <td>{{usuario.activo | toEmojiActivo}}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="5">No hay usuarios en la lista</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
+<h3>switch</h3>
+<!-- ngSwitch, *ngSwitchCase y *ngSwitchDefault -->
+
+<div>
+  <label for="rol">Rol:</label>
+  <select id="rol" [(ngModel)]="rolSeleccionado">
+    @for (rol of roles; track $index) {
+      <option [value]="rol">{{rol | uppercase}}</option>
+    }
+  </select>
+</div>
+
+@switch (rolSeleccionado()) {
+  @case ('free') {
+    <p>No tienes suscripción, puedes suscribirte aquí</p>
+  }
+  @case ('premium') {
+    <p>Tu suscripción estará activa hasta 10/12/26</p>
+  }
+  @case ('admin') {
+    <p>No necesitas suscripción</p>
+  }
+  @default {
+    <p>Logueate para ver el contenido...</p>
+  }
+}

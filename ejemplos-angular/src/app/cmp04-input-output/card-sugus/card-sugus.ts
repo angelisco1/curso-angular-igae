@@ -15,12 +15,17 @@ export class CardSugus {
   cantidad = signal<number>(0)
   // @Output() onAddSugus = new EventEmitter<{sabor: string, cantidad: number}>()
   onAddSugus = output<{sabor: string, cantidad: number}>()
-  sugus = input<{sabor: string, color: string}>()
+  // patatas = input<{sabor: string, color?: string}>({sabor: 'limón', color: 'yellow'})
+  sabor = input<string>('piña')
+  color = input<string>('blue')
+
+  // patatas = {sabor: fresa, color: undefined}
+
   // sabor = input<string>('limón')
   // color = input<string>('yellow')
 
   addSugus() {
-    this.onAddSugus.emit({sabor: 'limón', cantidad: this.cantidad()})
+    this.onAddSugus.emit({sabor: this.sabor(), cantidad: this.cantidad()})
   }
 
 }

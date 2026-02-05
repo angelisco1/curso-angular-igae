@@ -12,5 +12,7 @@ export class Sugus {
   // @Input() color: string = 'yellow'
   sabor = input<string>('limón')
   color = input<string>('yellow')
+  // sabor = 'fresa'
+  // color = 'red'
 
 }

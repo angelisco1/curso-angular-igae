@@ -1,0 +1,15 @@
+table {
+  border-collapse: collapse;
+}
+
+.esPrimera {
+  border-top: 1px solid black;
+}
+
+.esUltima {
+  border-bottom: 1px solid black;
+}
+
+.esPar {
+  background-color: lightgray;
+}

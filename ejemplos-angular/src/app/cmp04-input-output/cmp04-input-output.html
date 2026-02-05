@@ -4,6 +4,17 @@
 <app-sugus sabor="fresa" color="red"></app-sugus>
 <app-sugus [sabor]="sugus[0].sabor" [color]="sugus[0].color"></app-sugus> -->
 
-<app-card-sugus [sugus]="{sabor: 'piña', color: 'blue'}" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
 
-<app-card-sugus [sugus]="sugus[0]" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+<!-- <app-card-sugus [patatas]="{sabor: 'fresa', color: 'red'}" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+
+<app-card-sugus [patatas]="{sabor: 'piña', color: 'blue'}" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+
+<app-card-sugus [patatas]="sugus[0]" (onAddSugus)="mostrarProducto($event)"></app-card-sugus> -->
+
+<app-card-sugus sabor="fresa" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+<app-card-sugus sabor="naranja" color="orange" (onAddSugus)="mostrarProducto($event)"></app-card-sugus>
+
+
+<!-- <app-sugus sabor="limón" color="yellow"></app-sugus>
+<app-sugus sabor="piña" color="blue"></app-sugus>
+<app-sugus [sabor]="sugus[0].sabor" [color]="sugus[0].color"></app-sugus> -->
