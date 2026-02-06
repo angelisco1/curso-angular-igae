@@ -1,18 +1,37 @@
 <h2>Tema 06: Formularios</h2>
 
-<form>
+<form [formGroup]="form" (ngSubmit)="registro()">
   <div>
     <label for="username">Usuario:</label>
-    <input type="text" id="username">
+    <input type="text" id="username" formControlName="username" appFocus>
   </div>
   <div>
     <label for="email">Email:</label>
-    <input type="text" id="email">
+    <input type="text" id="email" formControlName="email">
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password">
-  </div>
+    <input type="password" id="password" formControlName="password">
 
-  <button type="submit">Sign up</button>
+    @if (form.get('password')?.touched && form.get('password')?.errors) {
+      <ul>
+        @for (error of form.get('password')?.errors | keyvalue; track $index) {
+          @switch (error.key) {
+            @case ('required') {
+              <li>El campo es obligatorio</li>
+            }
+            @case ('minlength') {
+              <li>El campo necesita {{error.value.requiredLength}}. Llevas {{error.value.actualLength}}</li>
+            }
+            @case ('simbolos') {
+              <li>El campo necesita algún símbolo de los siguientes {{error.value.required}}</li>
+            }
+          }
+        }
+      </ul>
+    }
+
+  </div>
+  <button type="submit" [disabled]="form.invalid">Sign up</button>
+  <!-- <button type="button" (click)="">Cancelar</button> -->
 </form>
