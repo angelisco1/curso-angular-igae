@@ -1,0 +1,24 @@
+<h2>Tema 07: Servicios</h2>
+
+<button type="button" (click)="login()">Login</button>
+<button type="button" (click)="logout()">Logout</button>
+
+<hr>
+
+<button type="button" (click)="mostrarInfo()">Info</button>
+<button type="button" (click)="mostrarWarning()">Warning</button>
+<button type="button" (click)="mostrarError()">Error</button>
+
+<hr>
+
+<select [(ngModel)]="langSelected">
+  @for (lang of languages; track $index) {
+    <option [value]="lang.code">{{lang.text}}</option>
+  }
+</select>
+
+<p>El lenguaje seleccionado es: {{langSelected()}}</p>
+
+<hr>
+
+<app-info-usuario></app-info-usuario>

@@ -1,0 +1,9 @@
+<!-- <h3>{{traductor.traducir('bienvenido')}} Charly</h3>
+<p>{{traductor.traducir('usuario')}}: cfalco</p>
+<p>{{traductor.traducir('email')}}: cfalco@gmail.com</p> -->
+
+@if (usuario) {
+  <h3>{{'bienvenido' | traducir}} {{usuario.nombre}}</h3>
+  <p>{{'usuario' | traducir}}: {{usuario.username}}</p>
+  <p>{{'email' | traducir}}: {{usuario.email}}</p>
+}
