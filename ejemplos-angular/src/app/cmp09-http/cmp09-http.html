@@ -1,1 +1,23 @@
-<p>cmp09-http works!</p>
+<h2>Tema 09: Peticiones HTTP</h2>
+
+<div class="lista-usuarios">
+
+  <div class="fila-usuarios">
+    @for (usuario of usuarios(); track usuario.id) {
+      <app-user [user]="usuario"></app-user>
+    }
+  </div>
+
+</div>
+
+<div class="lista-posts">
+
+</div>
+
+<!-- {
+  "id": 7,
+  "name": "Kurtis Weissnat",
+  "username": "Elwyn.Skiles",
+  "email": "Telly.Hoeger@billy.biz",
+  "website": "elvis.io",
+} -->

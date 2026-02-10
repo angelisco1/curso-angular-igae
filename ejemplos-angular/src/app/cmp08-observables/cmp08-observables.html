@@ -1,1 +1,9 @@
 <h2>Tema 08: Observables</h2>
+
+<button type="button" (click)="cancelarSuscripciones()">Cancelar</button>
+
+<button type="button" (click)="toggleCuenta()">Toggle cuenta</button>
+
+@if (mostrarCuenta()) {
+  <app-cuenta></app-cuenta>
+}
