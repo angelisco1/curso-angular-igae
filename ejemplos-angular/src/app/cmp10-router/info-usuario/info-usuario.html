@@ -1,0 +1,7 @@
+<h3>Info del usuario {{userId()}}</h3>
+
+@if (usuario()) {
+  <code>
+    <pre>{{usuario() | json}}</pre>
+  </code>
+}

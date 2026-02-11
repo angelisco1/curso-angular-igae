@@ -7,6 +7,7 @@ import { map, Observable } from 'rxjs';
 })
 export class Users {
   url: string = 'https://jsonplaceholder.typicode.com/users'
+  urlPosts: string = 'https://jsonplaceholder.typicode.com/posts'
   http = inject(HttpClient)
 
 
@@ -30,6 +31,18 @@ export class Users {
           return usuarios
         })
       )
+  }
+
+  getPostsDeUsuario(userId: number): Observable<any> {
+    return this.http.get(`${this.url}/${userId}/posts`)
+  }
+
+  crearPost(post: any): Observable<any> {
+    return this.http.post(this.urlPosts, post)
+  }
+
+  getUserById(id: string): Observable<any> {
+    return this.http.get(`${this.url}/${id}`)
   }
 
 }

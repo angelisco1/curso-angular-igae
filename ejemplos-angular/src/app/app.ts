@@ -8,6 +8,7 @@ import { Cmp06Formularios } from "./cmp06-formularios/cmp06-formularios";
 import { Cmp07Servicios } from "./cmp07-servicios/cmp07-servicios";
 import { Cmp08Observables } from "./cmp08-observables/cmp08-observables";
 import { Cmp09Http } from "./cmp09-http/cmp09-http";
+import { Cmp10Router } from "./cmp10-router/cmp10-router";
 
 
 
@@ -22,7 +23,8 @@ import { Cmp09Http } from "./cmp09-http/cmp09-http";
     Cmp06Formularios,
     Cmp07Servicios,
     Cmp08Observables,
-    Cmp09Http
+    Cmp09Http,
+    Cmp10Router
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'

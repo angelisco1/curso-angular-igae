@@ -1,0 +1,14 @@
+<h3>Inicio</h3>
+
+<ul>
+  @for (usuario of usuarios(); track usuario.id) {
+    <li>
+      {{usuario.name}}
+      <a [routerLink]="['/usuarios', usuario.id]">Ver + info</a>
+    </li>
+  }
+</ul>
+
+<hr>
+
+<router-outlet></router-outlet>

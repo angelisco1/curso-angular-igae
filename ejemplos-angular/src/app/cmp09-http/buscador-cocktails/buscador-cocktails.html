@@ -1,1 +1,13 @@
-<p>buscador-cocktails works!</p>
+<input type="text" [value]="filtro()" (input)="setFiltro($event)">
+
+<p>Has encontrado {{totalCocktails()}} cocktails filtrando por {{filtro()}}</p>
+
+<ul>
+  @for (cocktail of cocktails(); track cocktail.idDrink) {
+    <li>
+      {{cocktail.strDrink}}
+    </li>
+  } @empty {
+    <li>No se han encontrado cocktails con el filtro {{filtro()}}</li>
+  }
+</ul>

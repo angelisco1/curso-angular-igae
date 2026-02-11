@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,5 +8,11 @@ import { Component, input } from '@angular/core';
 })
 export class User {
   user = input<any>(null)
+  onLoadPosts = output<{userId: number}>()
+
+
+  cargarPosts() {
+    this.onLoadPosts.emit({userId: this.user().id})
+  }
 
 }

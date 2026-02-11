@@ -1,16 +1,30 @@
 <h2>Tema 09: Peticiones HTTP</h2>
 
-<div class="lista-usuarios">
+<app-buscador-cocktails></app-buscador-cocktails>
 
-  <div class="fila-usuarios">
-    @for (usuario of usuarios(); track usuario.id) {
-      <app-user [user]="usuario"></app-user>
-    }
+<hr>
+
+<button type="button" (click)="crearPost()">Crear post</button>
+
+<div [style]="{display: 'flex'}">
+
+  <div class="lista-usuarios">
+
+    <div class="fila-usuarios">
+      @for (usuario of usuarios(); track usuario.id) {
+        <app-user [user]="usuario" (onLoadPosts)="cargarPostsDeUsuario($event)"></app-user>
+      }
+    </div>
+
   </div>
 
-</div>
-
-<div class="lista-posts">
+  <div class="lista-posts">
+    @for (post of posts(); track post.id) {
+      <div>
+        <p>{{post.title}}</p>
+      </div>
+    }
+  </div>
 
 </div>
 
